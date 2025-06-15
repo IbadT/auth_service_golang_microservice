@@ -24,6 +24,6 @@ func (h *Handler) Register(ctx context.Context, req *authpb.RegisterRequest) (*a
 	return &authpb.RegisterResponse{}, nil
 }
 
-func (h *Handler) RefreshToken(ctx context.Context, req *authpb.RefreshTokenResponse) (*authpb.RefreshTokenResponse, error) {
+func (h *Handler) RefreshToken(ctx context.Context, req *authpb.RefreshTokenRequest) (*authpb.RefreshTokenResponse, error) {
 	return &authpb.RefreshTokenResponse{}, nil
 }
