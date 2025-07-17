@@ -3,7 +3,7 @@ package transportgrpc
 import (
 	"context"
 
-	"github.com/IbadT/auth_service_golang_microservice.git/internal/auth"
+	"github.com/IbadT/auth_service_golang_microservice/internal/auth"
 	authpb "github.com/IbadT/project-protos/proto/auth"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/status"

@@ -4,9 +4,9 @@ import (
 	"errors"
 	"fmt"
 
-	domain "github.com/IbadT/auth_service_golang_microservice.git/domain/auth"
-	jwtservice "github.com/IbadT/auth_service_golang_microservice.git/pkg/jwt"
-	"github.com/IbadT/auth_service_golang_microservice.git/pkg/security"
+	domain "github.com/IbadT/auth_service_golang_microservice/domain/auth"
+	jwtservice "github.com/IbadT/auth_service_golang_microservice/pkg/jwt"
+	"github.com/IbadT/auth_service_golang_microservice/pkg/security"
 	"github.com/golang-jwt/jwt/v5"
 	"github.com/google/uuid"
 )

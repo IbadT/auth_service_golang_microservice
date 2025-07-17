@@ -3,7 +3,7 @@ package database
 import (
 	"log"
 
-	"github.com/IbadT/auth_service_golang_microservice.git/internal/auth"
+	"github.com/IbadT/auth_service_golang_microservice/internal/auth"
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
 )

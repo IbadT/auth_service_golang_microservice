@@ -4,7 +4,7 @@ import (
 	"errors"
 	"testing"
 
-	domain "github.com/IbadT/auth_service_golang_microservice.git/domain/auth"
+	domain "github.com/IbadT/auth_service_golang_microservice/domain/auth"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/mock"
 )

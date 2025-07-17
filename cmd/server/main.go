@@ -3,9 +3,9 @@ package main
 import (
 	"log"
 
-	"github.com/IbadT/auth_service_golang_microservice.git/internal/auth"
-	"github.com/IbadT/auth_service_golang_microservice.git/internal/database"
-	transportgrpc "github.com/IbadT/auth_service_golang_microservice.git/internal/transport"
+	"github.com/IbadT/auth_service_golang_microservice/internal/auth"
+	"github.com/IbadT/auth_service_golang_microservice/internal/database"
+	transportgrpc "github.com/IbadT/auth_service_golang_microservice/internal/transport"
 )
 
 func main() {
