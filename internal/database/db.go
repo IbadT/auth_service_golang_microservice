@@ -3,6 +3,7 @@ package database
 import (
 	"log"
 
+	"github.com/IbadT/auth_service_golang_microservice.git/internal/auth"
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
 )
@@ -17,6 +18,11 @@ func InitDB() (*gorm.DB, error) {
 	DB, err = gorm.Open(postgres.Open(dsn), &gorm.Config{})
 	if err != nil {
 		log.Fatalf("Could not connect to database: %v", err)
+		return nil, err
+	}
+
+	if err = DB.AutoMigrate(auth.User{}); err != nil {
+		log.Fatalf("Could not migrate database: %v", err)
 		return nil, err
 	}
 

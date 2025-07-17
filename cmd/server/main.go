@@ -9,6 +9,17 @@ import (
 )
 
 func main() {
+	// if err := godotenv.Load(); err != nil {
+	// 	log.Fatal("Error loading .env file")
+	// }
+
+	// accessSecret := []byte(os.Getenv("ACCESS_SECRET"))
+	// refreshSecret := []byte(os.Getenv("REFRESH_SECRET"))
+
+	// if len(accessSecret) == 0 || len(refreshSecret) == 0 {
+	// 	log.Fatal("Secrets are not defined in .env")
+	// }
+
 	db, err := database.InitDB()
 	if err != nil {
 		log.Fatalf("Ошибка при подключении к базе данных: %v", err)

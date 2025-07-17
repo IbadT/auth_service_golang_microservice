@@ -1,0 +1,61 @@
+services:
+  auth_service:
+    build:
+      context: .
+    container_name: auth_microservice
+    restart: always
+    depends_on:
+      - auth_db
+    networks:
+      - microservices-network
+    environment:
+      - DB_HOST=auth_db
+      - DB_USER=postgres
+      - DB_PASSWORD=postgres
+      - DB_NAME=auth_mic
+    ports:
+      - "50053:50053"
+
+  auth_db:
+    image: postgres:15
+    container_name: auth_db
+    restart: always
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=auth_mic
+    ports:
+      - 5435:5432
+    volumes:
+      - auth_data:/var/lib/postgresql/data
+    networks:
+      - microservices-network
+
+  pgAdmin:
+    container_name: auth_pgAdmin
+    image: dpage/pgadmin4
+    restart: always
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@admin.com
+      PGADMIN_DEFAULT_PASSWORD: admin
+    ports:
+      - 5050:80
+    volumes:
+      - pgadmin:/var/lib/pgadmin
+    depends_on:
+      - auth_db
+      # auth_db:
+      #   condition: service_healthy
+    networks:
+      - microservices-network
+
+
+networks:
+  microservices-network:
+    driver: bridge
+
+volumes:
+  auth_data:
+    driver: local
+  pgadmin:
+    driver: local
