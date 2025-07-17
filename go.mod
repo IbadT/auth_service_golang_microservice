@@ -1,4 +1,4 @@
-module github.com/IbadT/auth_service_golang_microservice.git
+module github.com/IbadT/auth_service_golang_microservice
 
 go 1.24.3
 
